@@ -1,0 +1,21 @@
+cabal-version:      2.4
+name:               no-name
+version:            0.1.0.0
+
+author:             S3NP41
+
+executable display-media
+    main-is:          Main.hs
+
+    ghc-options:      -O2 -threaded
+
+    build-depends:    base ^>=4.16.4.0
+                    , hip
+                    , process
+                    , time
+                    , directory
+                    , optparse-applicative
+                    -- , ffmpeg-light  -- thinking of using this, does not work on windows though...
+
+    hs-source-dirs:   app
+    default-language: Haskell2010
