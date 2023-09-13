@@ -9,12 +9,15 @@ executable display-media
 
     ghc-options:      -O2 -threaded
 
+    other-modules:    Builder
+
     build-depends:    base ^>=4.16.4.0
                     , hip
                     , process
                     , time
                     , directory
                     , optparse-applicative
+                    , bytestring
                     -- , ffmpeg-light  -- thinking of using this, does not work on windows though...
 
     hs-source-dirs:   app

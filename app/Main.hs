@@ -5,6 +5,10 @@ import Graphics.Image.IO
 import Graphics.Image       hiding ( map )
 
 import Options.Applicative
+
+
+import qualified Data.ByteString.Lazy.Char8 as BSL
+
 import System.IO            ( hSetBuffering, stdout, BufferMode ( NoBuffering, LineBuffering, BlockBuffering ))
 import Control.Monad        ( when, unless )
 import Control.Concurrent   ( threadDelay, forkIO )
@@ -91,6 +95,8 @@ displayRow = mapM_
         putStr $ fg <> bg <> "▀"
     )
 
+-- genRow :: [ (Pixel RGB Double, Pixel RGB Double) ] -> BSL.ByteString
+-- genRow = concat . map (\(x, y) -> addFgColour (pixelToColour x) <> addBgColour (pixelToColour y) <> "▀")
 
 takeFrames :: String -> Int -> Int -> (Int, Int) -> IO [Image VS RGB Double]
 takeFrames tmp n s xy = do
